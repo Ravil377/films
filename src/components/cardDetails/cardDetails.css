@@ -1,0 +1,11 @@
+.card__info {
+    font-family: Roboto;
+    font-style: italic;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.card__info_bold {
+    font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CurrentMovieContext } from '../../contexts/CurrentMovieContext';
+import CardDetails from '../cardDetails/cardDetails';
 
 function Card(props) {
     const [isOpenDetails, setIsOpenDetails] = React.useState(false);
@@ -27,7 +28,7 @@ function Card(props) {
             </figure>
             <p className="card__more" onClick={handleClickDetails}>Показать детали</p>
             <div className={`card__details ${(props.movie.imdbID === isMovieDetails.imdbID) && 'card__details_open'}`}>
-                <p className="card__info">{`Режиссер: ${isMovieDetails.Director}`}</p>
+                <CardDetails />
             </div>
         </li>
     );
