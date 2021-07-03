@@ -3,7 +3,7 @@ import React from 'react';
 function Search(props) {
     
     const handleChangeSearchInput = (e) => {
-        if ((/^([a-zA-Z0-9]*)$/.test(e.target.value))) props.onChange(e.target.value);
+        if ((/([a-zA-Z0-9]*)$/.test(e.target.value))) props.onChange(e.target.value);
     };
 
     const handleSubmitSearch = (e) => {

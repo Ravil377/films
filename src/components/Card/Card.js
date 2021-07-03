@@ -4,7 +4,7 @@ import CardDetails from '../cardDetails/cardDetails';
 
 function Card(props) {
     const isMovieDetails = React.useContext(CurrentMovieContext);
-
+    
     const handleClickDetails = () => {
         if(props.movie.imdbID !== isMovieDetails.imdbID) {
             props.onClick(props.movie.imdbID);

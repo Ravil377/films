@@ -4,4 +4,5 @@
 @import url(./components/Card/Card.css);
 @import url(./components/Header/Header.css);
 @import url(./components/cardDetails/cardDetails.css);
+@import url(./components/Loading/Loading.css);
 @import url(./vendors/fonts.css);
