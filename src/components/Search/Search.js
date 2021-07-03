@@ -13,7 +13,7 @@ function Search(props) {
 
     return (
         <div className="search">
-            <form name='search-movie' onSubmit={handleSubmitSearch}>
+            <form name='search-movie' className="search-movie" onSubmit={handleSubmitSearch}>
                 <input type="text" 
                     className="search__input" 
                     name="movie" 
