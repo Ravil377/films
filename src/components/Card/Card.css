@@ -1,7 +1,3 @@
-.card {
-
-}
-
 .card__image {
     margin: 0;
 }
@@ -31,7 +27,22 @@
 }
 
 .card__details {
+    padding: 10px;
+    overflow-y: scroll;
+    background: antiquewhite;
+    position: absolute;
+    max-width: 236px;
+    max-height: 200px;
     display: none;
+}
+
+.card__details::-webkit-scrollbar {
+    width: 7px;
+    background-color: antiquewhite;
+}
+
+.card__details::-webkit-scrollbar-thumb {
+    background-color: #223c50;
 }
 
 .card__details_open {
