@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import Search from './components/Search/Search';
+import CardList from "./components/CardList/CardList";
+import api from "./Api/Api";
+import React from "react";
+import { CurrentMovieContext } from "./contexts/CurrentMovieContext";
 
 function App() {
+  const [movies, setMovies] = React.useState([]);
+  const [search, setSearch] = React.useState(null);
+  const [currentMovie, setCurrentMovie] = React.useState({});
+  
+  const handleSubmitSearch = () => {
+    api.getMovies(search)
+    .then(res => {
+        if(res.Response === 'True') {
+          setMovies(res.Search);
+        } else {
+          setMovies([])
+        }
+        setSearch(null);
+    }).catch(err => console.log(err));
+  }
+
+  const handleChangeSearchInput = (inputSearch) => {
+    setSearch(inputSearch);
+  }
+
+  const handleClickDetails = (id) => {
+    api.getMoviesById(id)
+    .then(res => {
+      setCurrentMovie(res);
+    }).catch(err => console.log(err));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <CurrentMovieContext.Provider value={currentMovie}>
+        <Header />
+        <Search onSubmit={handleSubmitSearch} search={search} onChange={handleChangeSearchInput} />
+        <CardList movies={movies} onClick={handleClickDetails} />
+    </CurrentMovieContext.Provider>
+    </>
   );
 }
 

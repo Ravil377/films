@@ -1,0 +1,39 @@
+.card {
+
+}
+
+.card__image {
+    margin: 0;
+}
+
+.card__image-slide {
+    width: 100%;
+}
+
+.card__caption {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card__more {
+    margin: 0;
+    color: cadetblue;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card__more {
+    cursor: pointer;
+}
+
+.card__details {
+    display: none;
+}
+
+.card__details_open {
+    display: block;
+}
