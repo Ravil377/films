@@ -1,7 +1,6 @@
 import React from 'react';
 import { CurrentMovieContext } from '../../contexts/CurrentMovieContext';
 import CardDetails from '../cardDetails/cardDetails';
-import Loading from '../Loading/Loading';
 
 function Card(props) {
     const isMovieDetails = React.useContext(CurrentMovieContext);
@@ -21,7 +20,6 @@ function Card(props) {
                 <figcaption className="card__caption">{props.movie.Title}</figcaption>
             </figure>
             <p className="card__more" onClick={handleClickDetails}>Показать детали</p>
-            {(props.isLoading && props.movie.imdbID === props.idDetails) && <Loading />}
             <div className={`card__details ${props.movie.imdbID === isMovieDetails.imdbID && 'card__details_open'}`}>
                 <CardDetails />
             </div>

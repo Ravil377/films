@@ -47,7 +47,7 @@ function App() {
         <Header />
         <Search onSubmit={handleSubmitSearch} search={search} onChange={handleChangeSearchInput} />
         {(loading && !error) ? 
-          <Loading /> : (!error) ? <CardList movies={movies} onClick={handleClickDetails} /> : <Error />
+          <Loading /> : (!error) ? <CardList movies={movies} onClick={handleClickDetails} loading={loading} /> : <Error />
         }
     </CurrentMovieContext.Provider>
     </>
