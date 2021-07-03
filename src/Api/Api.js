@@ -24,7 +24,7 @@ class Api {
 }
 
 const apiOptions = {
-    baseUrl: "http://www.omdbapi.com/",
+    baseUrl: "https://www.omdbapi.com/",
     authorization: "f2ead94d",
 };
 
