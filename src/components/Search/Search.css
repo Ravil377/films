@@ -11,3 +11,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.search__button {
+    color: darkblue;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+}

@@ -17,7 +17,7 @@ function Search(props) {
                 <input type="text" 
                     className="search__input" 
                     name="movie" 
-                    placeholder="Название фильмы" 
+                    placeholder="Название фильма" 
                     minLength="2" 
                     maxLength="30" 
                     value={props.search || ''}
