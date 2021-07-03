@@ -5,9 +5,17 @@ function Card(props) {
     const [isOpenDetails, setIsOpenDetails] = React.useState(false);
     const isMovieDetails = React.useContext(CurrentMovieContext);
 
+    
     const handleClickDetails = () => {
-        setIsOpenDetails((state) => !state);
-        props.onClick(props.movie.imdbID);
+        if(props.movie.imdbID !== isMovieDetails.imdbID) {
+            props.onClick(props.movie.imdbID);
+            setIsOpenDetails(true);
+        } else {
+            props.onClick(null);
+            setIsOpenDetails(false);
+        }
+
+        
     }
     
 
@@ -18,7 +26,7 @@ function Card(props) {
                 <figcaption className="card__caption">{props.movie.Title}</figcaption>
             </figure>
             <p className="card__more" onClick={handleClickDetails}>Показать детали</p>
-            <div className={`card__details ${isOpenDetails && 'card__details_open'}`}>
+            <div className={`card__details ${(props.movie.imdbID === isMovieDetails.imdbID) && 'card__details_open'}`}>
                 <p className="card__info">{`Режиссер: ${isMovieDetails.Director}`}</p>
             </div>
         </li>
